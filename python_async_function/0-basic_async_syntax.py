@@ -4,7 +4,7 @@ import random
 """ python """
 
 
-async def wait_random(max_delay: int = 10):
+async def wait_random(max_delay: int = 10) -> float:
     """ wait_random """
     v = random.uniform(0.0, float(max_delay))
 
