@@ -1,10 +1,19 @@
 #!/usr/bin/env python3
 """ tasks """
 import asyncio
+import typing
 
-wait_random = __import__('0-basic_async_syntax').wait_random
+task_wait_random = __import__('3-tasks').task_wait_random
 
 
-def task_wait_random(max_delay: int) -> asyncio.Task:
-    """ task_wait_random """
-    return asyncio.create_task(wait_random(max_delay))
+async def task_wait_n(n: int, max_delay: int) -> typing.List[float]:
+    """ task_wait_n """
+    return [
+        await result
+        for result
+        in asyncio.as_completed([
+            task_wait_random(max_delay)
+            for _
+            in range(n)
+        ])
+    ]
