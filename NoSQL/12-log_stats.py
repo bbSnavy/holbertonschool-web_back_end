@@ -7,7 +7,7 @@ def main():
     """ main """
     client = pymongo.MongoClient("mongodb://localhost:27017")
     collection = client.logs.nginx
-    print('%s logs' % (len(collection.find_many())))
+    print('%s logs' % (len(collection.count_documents())))
     print('Methods:')
     methods = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE']
     for method in methods:
