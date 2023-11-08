@@ -21,10 +21,12 @@ def find(collection, method):
 
 
 def find_len(collection, method):
+    """ find len """
     return len(find(collection, method))
 
 
 def find_len_display(collection, method):
+    """ find len display """
     print('\tmethod %s: %s' % (method, find_len(collection, method)))
 
 
