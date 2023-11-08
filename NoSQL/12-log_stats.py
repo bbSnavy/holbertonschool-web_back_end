@@ -7,11 +7,11 @@ def main():
     """ main """
     client = pymongo.MongoClient("mongodb://localhost:27017")
     collection = client.logs.nginx
-    print('%s logs' % (len(collection.count_documents())))
+    print('%s logs' % (collection.count_documents()))
     print('Methods:')
     methods = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE']
     for method in methods:
-        find_len_display(method)
+        find_len_display(collection, method)
 
 
 def find(collection, method):
