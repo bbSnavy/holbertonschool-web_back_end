@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
+""" wait_n """
 import asyncio
 import typing
 
 wait_random = __import__('0-basic_async_syntax').wait_random
-
-""" python """
 
 
 async def wait_n(n: int, max_delay: int) -> typing.List[float]:
