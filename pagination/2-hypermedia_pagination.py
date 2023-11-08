@@ -52,7 +52,7 @@ class Server:
         data_total = int(math.ceil(len(self.dataset()) / page_size))
         data_prev = page - 1
         data_next = page + 1
-        if page == 0:
+        if page <= 1:
             data_prev = None
         if page == data_total:
             data_next = None
