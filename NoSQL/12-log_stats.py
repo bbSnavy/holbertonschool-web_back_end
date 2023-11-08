@@ -16,14 +16,15 @@ def main():
 
 def find(collection, method):
     """ find """
-    return collection.find_many({'method': method})
+    regex = method
+    return collection.find_many({'method': {'$regex': regex}})
 
 
 def find_len(collection, method):
     return len(find(collection, method))
 
 
-def find_len_display(collection, method)):
+def find_len_display(collection, method):
     print('\tmethod %s: %s' % (method, find_len(collection, method)))
 
 
